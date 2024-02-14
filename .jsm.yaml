@@ -1,15 +1,28 @@
 jsm:
   services:
     - root: /home/java/service1
+      name: service1
     - root: /home/java/service2
+      name: service2
     - root: /home/java/service3
+      name: service3
     - root: /home/java/service4
+      name: service4
     - root: /home/java/service5
+      name: service5
     - root: /home/java/service6
+      name: service6
     - root: /home/java/service7
+      name: service7
     - root: /home/java/service8
+      name: service8
     - root: /home/java/service9
+      name: service9
     - root: /home/java/service10
+      name: service10
     - root: /home/java/service11
+      name: service11
     - root: /home/java/service12
+      name: service12
     - root: /home/java/service13
+      name: service13
