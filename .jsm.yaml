@@ -2,9 +2,9 @@ jsm:
   services:
     - root: java-projects/fat-jar
       name: service1
-      java_home: E:/JDK/jdk-11.0.20
+      java_home: /usr/lib/jvm/java-11-openjdk
       jvm_args: -Xmx1g
-      app_args: --server.port=8080
+      app_args: "--server.port=8282 --spring.profiles.active=test"
       log_root: ${root}/logs
       terminate_timeout: 10   # 服务正常结束所需最多时间，如果超过这个时间进程依然没有结束，则强制结束进程
     - root: java-projects/lib-dir

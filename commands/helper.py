@@ -1,6 +1,7 @@
 import glob
 import logging
 import os
+import platform
 import subprocess
 import time
 
@@ -29,29 +30,39 @@ def find_lib_folder(path) -> str | None:
         return None  # 如果没有找到任何lib文件夹，返回None
 
 
-def start_service_process(command: list[str]):
+def start_service_process(command: list[str], keyword: str):
     """
     启动后台进程
     :param command: 启动命令，当中的 None 元素会自动忽略
+    :param keyword: 启动过程中检查进程是否存在的搜索关键字
     """
     cleaned_command = [item for item in command if item is not None]
     print("--------------------")
     print(' '.join(cleaned_command))
     print("--------------------")
 
-    process = subprocess.Popen(
-        cleaned_command, universal_newlines=False,
-        creationflags=subprocess.DETACHED_PROCESS
-    )
+    process = None
+    isWindows = platform.system() == 'Windows'
+    if isWindows:
+        process = subprocess.Popen(
+            cleaned_command, universal_newlines=False,
+            creationflags=subprocess.DETACHED_PROCESS
+        )
+    else:
+        cleaned_command = ["bash", "-c", "nohup " + ' '.join(cleaned_command) + ">/dev/null &"]
+        process = subprocess.Popen(
+            cleaned_command, universal_newlines=False
+        )
+
     print(f"进程启动中，进程ID为 {process.pid} ...")
     time.sleep(3)  # 如果是 JVM 参数问题导致无法启动，那么 3 秒内进程应该会结束
 
     # 如果 3 秒后进程还在，说明 JVM 启动成功，但有可能之后因为框架初始化失败而退出。
     # 所以这里执行完后应该持续观察服务日志，确认日志当中包含服务完全启动的信息。
-    poll = process.poll()
-    if poll is None:
+    search_result = search_service_process(keyword)
+    if len(search_result) > 0:
         print("进程启动成功")
-    else:
+    elif not isWindows:
         print(f"进程启动失败，退出码为 {poll}")
 
 

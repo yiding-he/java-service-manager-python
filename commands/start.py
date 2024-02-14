@@ -29,7 +29,7 @@ def start_fat_jar(service: JavaService):
     if len(search_result) > 0:
         logging.error(f"服务 {service.get_name()} 已经在运行中，PID 为 {search_result[0]['pid']}")
         return
-    start_service_process(command)
+    start_service_process(command, service_name_arg)
 
 
 def start_command():
