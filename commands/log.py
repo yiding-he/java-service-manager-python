@@ -18,15 +18,14 @@ def log_command():
         logging.error("未指定要操作的服务")
         return
 
-    with subprocess.Popen(
-        ["tail", "-fn100", service.get_log_file()], 
-        stdout=subprocess.PIPE, stderr=subprocess.STDOUT, universal_newlines=True
-    ) as process:
-        try:
+    try:
+        with subprocess.Popen(
+            ["tail", "-fn100", service.get_log_file()], 
+            stdout=subprocess.PIPE, stderr=subprocess.STDOUT, universal_newlines=True
+        ) as process:
             for line in process.stdout:
                 print(line, end='')
-        except KeyboardInterrupt:
-            logging.info("结束查看日志")
-            sys.exit(0)
+            process.wait()
+    except KeyboardInterrupt:
+        sys.exit(0)
 
-        process.wait()

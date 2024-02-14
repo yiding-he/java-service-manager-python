@@ -322,7 +322,7 @@
         "kind": 2,
         "importPath": "commands.helper",
         "description": "commands.helper",
-        "peekOfCode": "def find_lib_folder(path) -> str | None:\n    # 使用glob.glob()函数查找path目录下的所有lib文件夹\n    lib_folders = glob.glob(os.path.join(path, \"lib/\"))\n    # 如果找到了lib文件夹，则返回第一个\n    if lib_folders:\n        return lib_folders[0].replace(\"\\\\\", \"/\")\n    else:\n        return None  # 如果没有找到任何lib文件夹，返回None\ndef start_service_process(command: list[str], keyword: str):\n    \"\"\"",
+        "peekOfCode": "def find_lib_folder(path) -> str | None:\n    # 使用glob.glob()函数查找path目录下的所有lib文件夹\n    lib_folders = glob.glob(os.path.join(path, \"lib/\"))\n    # 如果找到了lib文件夹，则返回第一个\n    if lib_folders:\n        return lib_folders[0].replace(\"\\\\\", \"/\")\n    else:\n        return None  # 如果没有找到任何lib文件夹，返回None\ndef start_service_process(command: list[str], keywords: list[str]):\n    \"\"\"",
         "detail": "commands.helper",
         "documentation": {}
     },
@@ -331,7 +331,7 @@
         "kind": 2,
         "importPath": "commands.helper",
         "description": "commands.helper",
-        "peekOfCode": "def start_service_process(command: list[str], keyword: str):\n    \"\"\"\n    启动后台进程\n    :param command: 启动命令，当中的 None 元素会自动忽略\n    :param keyword: 启动过程中检查进程是否存在的搜索关键字\n    \"\"\"\n    cleaned_command = [item for item in command if item is not None]\n    print(\"--------------------\")\n    print(' '.join(cleaned_command))\n    print(\"--------------------\")",
+        "peekOfCode": "def start_service_process(command: list[str], keywords: list[str]):\n    \"\"\"\n    启动后台进程\n    :param command: 启动命令，当中的 None 元素会自动忽略\n    :param keywords: 启动过程中检查进程是否存在的搜索关键字\n    \"\"\"\n    cleaned_command = [item for item in command if item is not None]\n    print(\"--------------------\")\n    print(' '.join(cleaned_command))\n    print(\"--------------------\")",
         "detail": "commands.helper",
         "documentation": {}
     },
@@ -340,7 +340,7 @@
         "kind": 2,
         "importPath": "commands.helper",
         "description": "commands.helper",
-        "peekOfCode": "def search_service_process(keyword: str) -> list[dict]:\n    # 获取所有运行中的进程\n    processes = psutil.process_iter(['pid', 'name', 'cmdline'])\n    # 搜索包含关键字的进程\n    matching_processes = []\n    for process in processes:\n        try:\n            # cmdline可能为None，需要处理异常\n            if process.info['cmdline'] and keyword in ' '.join(process.info['cmdline']):\n                matching_processes.append({",
+        "peekOfCode": "def search_service_process(keywords: list[str]) -> list[dict]:\n    \"\"\"\n    根据关键字查询进程\n    :param keywords: 关键字列表，通过任何一个查到了就表示满足条件\n    \"\"\"\n    # 获取所有运行中的进程\n    processes = psutil.process_iter(['pid', 'name', 'cmdline'])\n    # 搜索包含关键字的进程\n    matching_processes = []\n    for process in processes:",
         "detail": "commands.helper",
         "documentation": {}
     },
@@ -367,7 +367,7 @@
         "kind": 2,
         "importPath": "commands.log",
         "description": "commands.log",
-        "peekOfCode": "def log_command():\n    isWindows = platform.system() == 'Windows'\n    if isWindows:\n        logging.error(\"Windows 尚不支持\")\n        return\n    service = get_service()\n    if service is None:\n        logging.error(\"未指定要操作的服务\")\n        return\n    with subprocess.Popen(",
+        "peekOfCode": "def log_command():\n    isWindows = platform.system() == 'Windows'\n    if isWindows:\n        logging.error(\"Windows 尚不支持\")\n        return\n    service = get_service()\n    if service is None:\n        logging.error(\"未指定要操作的服务\")\n        return\n    try:",
         "detail": "commands.log",
         "documentation": {}
     },
@@ -376,7 +376,7 @@
         "kind": 2,
         "importPath": "commands.start",
         "description": "commands.start",
-        "peekOfCode": "def start_lib_dir(service: JavaService):\n    logging.info(f\"启动服务 {service.get_name()}...\")\n    logging.info(f\"服务类型为 {service.get_type()}\")\n    pass\ndef start_fat_jar(service: JavaService):\n    logging.info(f\"启动服务 {service.get_name()}...\")\n    logging.info(f\"服务类型为 {service.get_type()}\")\n    logging.info(f\"打包路径为 {service.jar_path}\")\n    logging.info(f\"日志输出路径为 {service.get_log_file()}\")\n    java_executable = service.get_executable()",
+        "peekOfCode": "def start_lib_dir(service: JavaService):\n    logging.info(f\"启动服务 {service.get_name()}...\")\n    logging.info(f\"服务类型为 {service.get_type()}\")\n    logging.info(f\"打包路径为 {service.jar_path}\")\n    logging.info(f\"日志输出路径为 {service.get_log_file()}\")\n    java_executable = service.get_executable()\n    logging.info(f\"java 执行路径为 {java_executable}\")\n    pass\ndef start_fat_jar(service: JavaService):\n    logging.info(f\"启动服务 {service.get_name()}...\")",
         "detail": "commands.start",
         "documentation": {}
     },
@@ -385,7 +385,7 @@
         "kind": 2,
         "importPath": "commands.start",
         "description": "commands.start",
-        "peekOfCode": "def start_fat_jar(service: JavaService):\n    logging.info(f\"启动服务 {service.get_name()}...\")\n    logging.info(f\"服务类型为 {service.get_type()}\")\n    logging.info(f\"打包路径为 {service.jar_path}\")\n    logging.info(f\"日志输出路径为 {service.get_log_file()}\")\n    java_executable = service.get_executable()\n    logging.info(f\"java 执行路径为 {java_executable}\")\n    # 我们将服务名参数当作搜索关键字，用于查询服务是否正在运行中\n    service_name_arg = service.get_search_keyword()\n    log_dir_arg = (\"-Dlog.root=\" + service.get_log_root()) if service.get_log_root() is not None else None",
+        "peekOfCode": "def start_fat_jar(service: JavaService):\n    logging.info(f\"启动服务 {service.get_name()}...\")\n    logging.info(f\"服务类型为 {service.get_type()}\")\n    logging.info(f\"打包路径为 {service.jar_path}\")\n    logging.info(f\"日志输出路径为 {service.get_log_file()}\")\n    java_executable = service.get_executable()\n    logging.info(f\"java 执行路径为 {java_executable}\")\n    service_name_arg = \"-Dservice.name=\" + service.get_name()\n    log_dir_arg = (\"-Dlog.root=\" + service.get_log_dir()) if service.get_log_dir() is not None else None\n    log_file_arg = \"-Dlog.file=\" + service.get_log_file_name()",
         "detail": "commands.start",
         "documentation": {}
     },
@@ -403,7 +403,7 @@
         "kind": 2,
         "importPath": "commands.status",
         "description": "commands.status",
-        "peekOfCode": "def status_command():\n    service = get_service()\n    if service is None:\n        logging.error(\"未指定要操作的服务\")\n        return\n    search_result = search_service_process(service.get_search_keyword())\n    if len(search_result) > 0:\n        logging.info(f\"服务 {service.get_name()} 已经在运行中，PID 为 {search_result[0]['pid']}\")\n    else:\n        logging.info(f\"服务 {service.get_name()} 没有运行。\")",
+        "peekOfCode": "def status_command():\n    service = get_service()\n    if service is None:\n        logging.error(\"未指定要操作的服务\")\n        return\n    search_result = search_service_process(service.get_search_keywords())\n    if len(search_result) > 0:\n        logging.info(f\"服务 {service.get_name()} 已经在运行中，PID 为 {search_result[0]['pid']}\")\n    else:\n        logging.info(f\"服务 {service.get_name()} 没有运行。\")",
         "detail": "commands.status",
         "documentation": {}
     },
@@ -412,7 +412,7 @@
         "kind": 2,
         "importPath": "commands.stop",
         "description": "commands.stop",
-        "peekOfCode": "def stop_command():\n    service = get_service()\n    if service is None:\n        logging.error(\"未指定要操作的服务\")\n        return\n    process = search_service_process(service.get_search_keyword())\n    if len(process) == 0:\n        logging.error(f\"服务 {service.get_name()} 不在运行中\")\n        return\n    kill_service_process(process[0]['pid'])",
+        "peekOfCode": "def stop_command():\n    service = get_service()\n    if service is None:\n        logging.error(\"未指定要操作的服务\")\n        return\n    process = search_service_process(service.get_search_keywords())\n    if len(process) == 0:\n        logging.error(f\"服务 {service.get_name()} 不在运行中\")\n        return\n    kill_service_process(process[0]['pid'])",
         "detail": "commands.stop",
         "documentation": {}
     },

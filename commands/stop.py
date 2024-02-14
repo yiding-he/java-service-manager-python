@@ -9,7 +9,7 @@ def stop_command():
         logging.error("未指定要操作的服务")
         return
 
-    process = search_service_process(service.get_search_keyword())
+    process = search_service_process(service.get_search_keywords())
     if len(process) == 0:
         logging.error(f"服务 {service.get_name()} 不在运行中")
         return

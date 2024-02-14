@@ -34,8 +34,11 @@ class JavaService:
     def get_type(self) -> JavaServiceType | None:
         return self.type
 
-    def get_search_keyword(self) -> str:
-        return "-Djsm.service.name=" + self.get_name()
+    def get_search_keywords(self) -> list[str]:
+        # 通过 config 目录查找可以避免混淆 service 和 service-1
+        return [
+            os.path.join(self.get_root(), "config")
+        ]
 
     def get_name(self):
         """
@@ -80,22 +83,28 @@ class JavaService:
             return self.data["root"]
         else:
             return None
-
-    def get_log_root(self) -> str:
-        if "log_root" in self.data:
-            hostname = socket.gethostname()
-            log_root = str(self.data["log_root"]).replace("${root}", self.get_root())
-            log_root = os.path.join(log_root, hostname)
+        
+    def get_config_dir(self) -> str:
+        if "config_dir" in self.data:
+            return str(self.data["config_dir"]).replace("${root}", self.get_root())
         else:
-            log_root = os.path.join(self.get_root(), "logs")
-        return log_root
+            return os.path.join(self.get_root(), "config")
+
+    def get_log_dir(self) -> str:
+        if "log_dir" in self.data:
+            hostname = socket.gethostname()
+            log_dir = str(self.data["log_dir"]).replace("${root}", self.get_root())
+            log_dir = os.path.join(log_dir, hostname)
+        else:
+            log_dir = os.path.join(self.get_root(), "logs", hostname)
+        return log_dir
         
     def get_log_file_name(self) -> str:
         hostname = socket.gethostname()
         return "server-" + hostname
 
     def get_log_file(self) -> str | None:
-        return os.path.join(self.get_log_root(), self.get_log_file_name() + ".log")
+        return os.path.join(self.get_log_dir(), self.get_log_file_name() + ".log")
 
     def get_terminate_timeout(self) -> int | None:
         if "terminate_timeout" in self.data:

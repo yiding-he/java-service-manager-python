@@ -30,11 +30,11 @@ def find_lib_folder(path) -> str | None:
         return None  # 如果没有找到任何lib文件夹，返回None
 
 
-def start_service_process(command: list[str], keyword: str):
+def start_service_process(command: list[str], keywords: list[str]):
     """
     启动后台进程
     :param command: 启动命令，当中的 None 元素会自动忽略
-    :param keyword: 启动过程中检查进程是否存在的搜索关键字
+    :param keywords: 启动过程中检查进程是否存在的搜索关键字
     """
     cleaned_command = [item for item in command if item is not None]
     print("--------------------")
@@ -59,14 +59,19 @@ def start_service_process(command: list[str], keyword: str):
 
     # 如果 3 秒后进程还在，说明 JVM 启动成功，但有可能之后因为框架初始化失败而退出。
     # 所以这里执行完后应该持续观察服务日志，确认日志当中包含服务完全启动的信息。
-    search_result = search_service_process(keyword)
+    search_result = search_service_process(keywords)
     if len(search_result) > 0:
         print("进程启动成功")
     elif not isWindows:
-        print(f"进程启动失败，退出码为 {poll}")
+        print(f"进程启动失败")
 
 
-def search_service_process(keyword: str) -> list[dict]:
+def search_service_process(keywords: list[str]) -> list[dict]:
+    """
+    根据关键字查询进程
+    :param keywords: 关键字列表，通过任何一个查到了就表示满足条件
+    """
+    
     # 获取所有运行中的进程
     processes = psutil.process_iter(['pid', 'name', 'cmdline'])
 
@@ -75,7 +80,7 @@ def search_service_process(keyword: str) -> list[dict]:
     for process in processes:
         try:
             # cmdline可能为None，需要处理异常
-            if process.info['cmdline'] and keyword in ' '.join(process.info['cmdline']):
+            if process.info['cmdline'] and any(k in ' '.join(process.info['cmdline']) for k in keywords):
                 matching_processes.append({
                     'pid': process.info['pid'],
                     'name': process.info['name'],
