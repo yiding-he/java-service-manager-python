@@ -1,0 +1,455 @@
+[
+    {
+        "label": "glob",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "glob",
+        "description": "glob",
+        "detail": "glob",
+        "documentation": {}
+    },
+    {
+        "label": "logging",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "logging",
+        "description": "logging",
+        "detail": "logging",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "platform",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "platform",
+        "description": "platform",
+        "detail": "platform",
+        "documentation": {}
+    },
+    {
+        "label": "subprocess",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "subprocess",
+        "description": "subprocess",
+        "detail": "subprocess",
+        "documentation": {}
+    },
+    {
+        "label": "time",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "time",
+        "description": "time",
+        "detail": "time",
+        "documentation": {}
+    },
+    {
+        "label": "psutil",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "psutil",
+        "description": "psutil",
+        "detail": "psutil",
+        "documentation": {}
+    },
+    {
+        "label": "textwrap",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "textwrap",
+        "description": "textwrap",
+        "detail": "textwrap",
+        "documentation": {}
+    },
+    {
+        "label": "Config",
+        "importPath": "domain.config",
+        "description": "domain.config",
+        "isExtraImport": true,
+        "detail": "domain.config",
+        "documentation": {}
+    },
+    {
+        "label": "Config",
+        "importPath": "domain.config",
+        "description": "domain.config",
+        "isExtraImport": true,
+        "detail": "domain.config",
+        "documentation": {}
+    },
+    {
+        "label": "Config",
+        "importPath": "domain.config",
+        "description": "domain.config",
+        "isExtraImport": true,
+        "detail": "domain.config",
+        "documentation": {}
+    },
+    {
+        "label": "get_service",
+        "importPath": "domain.service",
+        "description": "domain.service",
+        "isExtraImport": true,
+        "detail": "domain.service",
+        "documentation": {}
+    },
+    {
+        "label": "JavaServiceType",
+        "importPath": "domain.service",
+        "description": "domain.service",
+        "isExtraImport": true,
+        "detail": "domain.service",
+        "documentation": {}
+    },
+    {
+        "label": "JavaService",
+        "importPath": "domain.service",
+        "description": "domain.service",
+        "isExtraImport": true,
+        "detail": "domain.service",
+        "documentation": {}
+    },
+    {
+        "label": "get_service",
+        "importPath": "domain.service",
+        "description": "domain.service",
+        "isExtraImport": true,
+        "detail": "domain.service",
+        "documentation": {}
+    },
+    {
+        "label": "get_service",
+        "importPath": "domain.service",
+        "description": "domain.service",
+        "isExtraImport": true,
+        "detail": "domain.service",
+        "documentation": {}
+    },
+    {
+        "label": "get_service",
+        "importPath": "domain.service",
+        "description": "domain.service",
+        "isExtraImport": true,
+        "detail": "domain.service",
+        "documentation": {}
+    },
+    {
+        "label": "start_service_process",
+        "importPath": "commands.helper",
+        "description": "commands.helper",
+        "isExtraImport": true,
+        "detail": "commands.helper",
+        "documentation": {}
+    },
+    {
+        "label": "search_service_process",
+        "importPath": "commands.helper",
+        "description": "commands.helper",
+        "isExtraImport": true,
+        "detail": "commands.helper",
+        "documentation": {}
+    },
+    {
+        "label": "search_service_process",
+        "importPath": "commands.helper",
+        "description": "commands.helper",
+        "isExtraImport": true,
+        "detail": "commands.helper",
+        "documentation": {}
+    },
+    {
+        "label": "search_service_process",
+        "importPath": "commands.helper",
+        "description": "commands.helper",
+        "isExtraImport": true,
+        "detail": "commands.helper",
+        "documentation": {}
+    },
+    {
+        "label": "kill_service_process",
+        "importPath": "commands.helper",
+        "description": "commands.helper",
+        "isExtraImport": true,
+        "detail": "commands.helper",
+        "documentation": {}
+    },
+    {
+        "label": "find_jar_file",
+        "importPath": "commands.helper",
+        "description": "commands.helper",
+        "isExtraImport": true,
+        "detail": "commands.helper",
+        "documentation": {}
+    },
+    {
+        "label": "find_lib_folder",
+        "importPath": "commands.helper",
+        "description": "commands.helper",
+        "isExtraImport": true,
+        "detail": "commands.helper",
+        "documentation": {}
+    },
+    {
+        "label": "search_service_process",
+        "importPath": "commands.helper",
+        "description": "commands.helper",
+        "isExtraImport": true,
+        "detail": "commands.helper",
+        "documentation": {}
+    },
+    {
+        "label": "logging.config",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "logging.config",
+        "description": "logging.config",
+        "detail": "logging.config",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "yaml",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "yaml",
+        "description": "yaml",
+        "detail": "yaml",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "Enum",
+        "importPath": "enum",
+        "description": "enum",
+        "isExtraImport": true,
+        "detail": "enum",
+        "documentation": {}
+    },
+    {
+        "label": "list_command",
+        "importPath": "commands.list",
+        "description": "commands.list",
+        "isExtraImport": true,
+        "detail": "commands.list",
+        "documentation": {}
+    },
+    {
+        "label": "log_command",
+        "importPath": "commands.log",
+        "description": "commands.log",
+        "isExtraImport": true,
+        "detail": "commands.log",
+        "documentation": {}
+    },
+    {
+        "label": "start_command",
+        "importPath": "commands.start",
+        "description": "commands.start",
+        "isExtraImport": true,
+        "detail": "commands.start",
+        "documentation": {}
+    },
+    {
+        "label": "status_command",
+        "importPath": "commands.status",
+        "description": "commands.status",
+        "isExtraImport": true,
+        "detail": "commands.status",
+        "documentation": {}
+    },
+    {
+        "label": "stop_command",
+        "importPath": "commands.stop",
+        "description": "commands.stop",
+        "isExtraImport": true,
+        "detail": "commands.stop",
+        "documentation": {}
+    },
+    {
+        "label": "find_jar_file",
+        "kind": 2,
+        "importPath": "commands.helper",
+        "description": "commands.helper",
+        "peekOfCode": "def find_jar_file(path) -> str | None:\n    # 使用glob.glob()函数查找path目录下的所有.jar文件\n    jar_files = glob.glob(os.path.join(path, \"*.jar\"))\n    # 如果找到了.jar文件，则返回第一个\n    if jar_files:\n        return jar_files[0].replace(\"\\\\\", \"/\")\n    else:\n        return None  # 如果没有找到任何.jar文件，返回None\ndef find_lib_folder(path) -> str | None:\n    # 使用glob.glob()函数查找path目录下的所有lib文件夹",
+        "detail": "commands.helper",
+        "documentation": {}
+    },
+    {
+        "label": "find_lib_folder",
+        "kind": 2,
+        "importPath": "commands.helper",
+        "description": "commands.helper",
+        "peekOfCode": "def find_lib_folder(path) -> str | None:\n    # 使用glob.glob()函数查找path目录下的所有lib文件夹\n    lib_folders = glob.glob(os.path.join(path, \"lib/\"))\n    # 如果找到了lib文件夹，则返回第一个\n    if lib_folders:\n        return lib_folders[0].replace(\"\\\\\", \"/\")\n    else:\n        return None  # 如果没有找到任何lib文件夹，返回None\ndef start_service_process(command: list[str], keyword: str):\n    \"\"\"",
+        "detail": "commands.helper",
+        "documentation": {}
+    },
+    {
+        "label": "start_service_process",
+        "kind": 2,
+        "importPath": "commands.helper",
+        "description": "commands.helper",
+        "peekOfCode": "def start_service_process(command: list[str], keyword: str):\n    \"\"\"\n    启动后台进程\n    :param command: 启动命令，当中的 None 元素会自动忽略\n    :param keyword: 启动过程中检查进程是否存在的搜索关键字\n    \"\"\"\n    cleaned_command = [item for item in command if item is not None]\n    print(\"--------------------\")\n    print(' '.join(cleaned_command))\n    print(\"--------------------\")",
+        "detail": "commands.helper",
+        "documentation": {}
+    },
+    {
+        "label": "search_service_process",
+        "kind": 2,
+        "importPath": "commands.helper",
+        "description": "commands.helper",
+        "peekOfCode": "def search_service_process(keyword: str) -> list[dict]:\n    # 获取所有运行中的进程\n    processes = psutil.process_iter(['pid', 'name', 'cmdline'])\n    # 搜索包含关键字的进程\n    matching_processes = []\n    for process in processes:\n        try:\n            # cmdline可能为None，需要处理异常\n            if process.info['cmdline'] and keyword in ' '.join(process.info['cmdline']):\n                matching_processes.append({",
+        "detail": "commands.helper",
+        "documentation": {}
+    },
+    {
+        "label": "kill_service_process",
+        "kind": 2,
+        "importPath": "commands.helper",
+        "description": "commands.helper",
+        "peekOfCode": "def kill_service_process(pid: int, timeout_sec: int = 10):\n    \"\"\"\n    杀死指定进程\n    :param pid: 进程ID\n    :param timeout_sec: 等待超时时间，如果进程在超时时间内没有结束，则强制杀死进程\n    \"\"\"\n    # 尝试获取指定PID的进程对象\n    process = psutil.Process(pid)\n    # 首先尝试优雅地结束进程（发送SIGTERM信号）\n    logging.info(f\"尝试结束进程 {pid} ...\")",
+        "detail": "commands.helper",
+        "documentation": {}
+    },
+    {
+        "label": "list_command",
+        "kind": 2,
+        "importPath": "commands.list",
+        "description": "commands.list",
+        "peekOfCode": "def list_command():\n    services = Config.CONFIG[\"jsm\"][\"services\"]\n    if services:\n        index_len = 1 if len(services) < 9 else 2 if len(services) < 99 else 3\n        name_len = max(len(service[\"name\"]) for service in services)\n        print(f\"找到 {len(services)} 个服务: \")\n        for i in range(len(services)):\n            service = services[i]\n            print((\"  [{:\" + str(index_len) + \"d}] {:\" + str(name_len) + \"} ({})\")\n                  .format(i, service[\"name\"], service[\"root\"]))",
+        "detail": "commands.list",
+        "documentation": {}
+    },
+    {
+        "label": "log_command",
+        "kind": 2,
+        "importPath": "commands.log",
+        "description": "commands.log",
+        "peekOfCode": "def log_command():\n    isWindows = platform.system() == 'Windows'\n    if isWindows:\n        logging.error(\"Windows 尚不支持\")\n        return\n    service = get_service()\n    if service is None:\n        logging.error(\"未指定要操作的服务\")\n        return\n    with subprocess.Popen(",
+        "detail": "commands.log",
+        "documentation": {}
+    },
+    {
+        "label": "start_lib_dir",
+        "kind": 2,
+        "importPath": "commands.start",
+        "description": "commands.start",
+        "peekOfCode": "def start_lib_dir(service: JavaService):\n    logging.info(f\"启动服务 {service.get_name()}...\")\n    logging.info(f\"服务类型为 {service.get_type()}\")\n    pass\ndef start_fat_jar(service: JavaService):\n    logging.info(f\"启动服务 {service.get_name()}...\")\n    logging.info(f\"服务类型为 {service.get_type()}\")\n    logging.info(f\"打包路径为 {service.jar_path}\")\n    java_executable = service.get_executable()\n    logging.info(f\"java 执行路径为 {java_executable}\")",
+        "detail": "commands.start",
+        "documentation": {}
+    },
+    {
+        "label": "start_fat_jar",
+        "kind": 2,
+        "importPath": "commands.start",
+        "description": "commands.start",
+        "peekOfCode": "def start_fat_jar(service: JavaService):\n    logging.info(f\"启动服务 {service.get_name()}...\")\n    logging.info(f\"服务类型为 {service.get_type()}\")\n    logging.info(f\"打包路径为 {service.jar_path}\")\n    java_executable = service.get_executable()\n    logging.info(f\"java 执行路径为 {java_executable}\")\n    # 我们将服务名参数当作搜索关键字，用于查询服务是否正在运行中\n    service_name_arg = service.get_search_keyword()\n    log_dir_arg = (\"-Dlog.root=\" + service.get_log_root()) if service.get_log_root() is not None else None\n    command = ([java_executable, service_name_arg, log_dir_arg] + service.get_jvm_args() +",
+        "detail": "commands.start",
+        "documentation": {}
+    },
+    {
+        "label": "start_command",
+        "kind": 2,
+        "importPath": "commands.start",
+        "description": "commands.start",
+        "peekOfCode": "def start_command():\n    service = get_service()\n    if service is None:\n        logging.error(\"未指定要操作的服务\")\n        return\n    service_type = service.get_type()\n    if service_type == JavaServiceType.FAT_JAR:\n        start_fat_jar(service)\n    elif service_type == JavaServiceType.LIB_DIR:\n        start_lib_dir(service)",
+        "detail": "commands.start",
+        "documentation": {}
+    },
+    {
+        "label": "status_command",
+        "kind": 2,
+        "importPath": "commands.status",
+        "description": "commands.status",
+        "peekOfCode": "def status_command():\n    service = get_service()\n    if service is None:\n        logging.error(\"未指定要操作的服务\")\n        return\n    search_result = search_service_process(service.get_search_keyword())\n    if len(search_result) > 0:\n        logging.info(f\"服务 {service.get_name()} 已经在运行中，PID 为 {search_result[0]['pid']}\")\n    else:\n        logging.info(f\"服务 {service.get_name()} 没有运行。\")",
+        "detail": "commands.status",
+        "documentation": {}
+    },
+    {
+        "label": "stop_command",
+        "kind": 2,
+        "importPath": "commands.stop",
+        "description": "commands.stop",
+        "peekOfCode": "def stop_command():\n    service = get_service()\n    if service is None:\n        logging.error(\"未指定要操作的服务\")\n        return\n    process = search_service_process(service.get_search_keyword())\n    if len(process) == 0:\n        logging.error(f\"服务 {service.get_name()} 不在运行中\")\n        return\n    kill_service_process(process[0]['pid'])",
+        "detail": "commands.stop",
+        "documentation": {}
+    },
+    {
+        "label": "Config",
+        "kind": 6,
+        "importPath": "domain.config",
+        "description": "domain.config",
+        "peekOfCode": "class Config:\n    CONFIG = None\n    CONFIG_FILE_NAME = \".jsm.yaml\"\n    CONFIG_FILE_PATH = None\n    @staticmethod\n    def find_jsm_yaml_file():\n        candidate = os.path.join(os.path.expanduser(\"~\"), \".jsm.yaml\")\n        if os.path.isfile(candidate):\n            return candidate\n        candidate = os.path.join(os.getcwd(), \".jsm.yaml\")",
+        "detail": "domain.config",
+        "documentation": {}
+    },
+    {
+        "label": "JavaServiceType",
+        "kind": 6,
+        "importPath": "domain.service",
+        "description": "domain.service",
+        "peekOfCode": "class JavaServiceType(Enum):\n    FAT_JAR = \"fat-jar\"\n    LIB_DIR = \"lib-dir\"\nclass JavaService:\n    def __init__(self, data: dict):\n        self.jar_path = None\n        self.lib_folder = None\n        self.data = data\n        self.type = None\n        self.__init_type__()",
+        "detail": "domain.service",
+        "documentation": {}
+    },
+    {
+        "label": "JavaService",
+        "kind": 6,
+        "importPath": "domain.service",
+        "description": "domain.service",
+        "peekOfCode": "class JavaService:\n    def __init__(self, data: dict):\n        self.jar_path = None\n        self.lib_folder = None\n        self.data = data\n        self.type = None\n        self.__init_type__()\n    def __init_type__(self):\n        if self.type is None:\n            self.jar_path = find_jar_file(self.data[\"root\"])",
+        "detail": "domain.service",
+        "documentation": {}
+    },
+    {
+        "label": "get_service",
+        "kind": 2,
+        "importPath": "domain.service",
+        "description": "domain.service",
+        "peekOfCode": "def get_service() -> JavaService | None:\n    if len(sys.argv) < 3:\n        print(\"Usage: jsm <command> <service> [options]\")\n        return None\n    index_or_name = sys.argv[2]\n    services = Config.CONFIG[\"jsm\"][\"services\"]\n    if index_or_name.isdigit():\n        if not 0 <= int(index_or_name) < len(services):\n            print(\"序号超出范围，请使用 jsm list 查看可用服务列表\")\n            return None",
+        "detail": "domain.service",
+        "documentation": {}
+    },
+    {
+        "label": "run_process_sync",
+        "kind": 2,
+        "importPath": "tests.subprocess_test",
+        "description": "tests.subprocess_test",
+        "peekOfCode": "def run_process_sync():\n    with subprocess.Popen(jar_command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, universal_newlines=True) as process:\n        for line in process.stdout:\n            print(line, end='')\n        process.wait()\n        if process.returncode == 0:\n            print(\"Java程序成功执行\")\n        else:\n            print(f\"Java程序执行失败，退出码为 {process.returncode}\")\ndef run_process_async(command: list[str]):",
+        "detail": "tests.subprocess_test",
+        "documentation": {}
+    },
+    {
+        "label": "run_process_async",
+        "kind": 2,
+        "importPath": "tests.subprocess_test",
+        "description": "tests.subprocess_test",
+        "peekOfCode": "def run_process_async(command: list[str]):\n    process = subprocess.Popen(\n        command, universal_newlines=False,\n        stdout=subprocess.PIPE, stderr=subprocess.STDOUT,\n        creationflags=subprocess.DETACHED_PROCESS\n    )\n    print(f\"进程启动中，进程ID为 {process.pid} ...\")\n    time.sleep(3)\n    poll = process.poll()\n    if poll is None:",
+        "detail": "tests.subprocess_test",
+        "documentation": {}
+    }
+]

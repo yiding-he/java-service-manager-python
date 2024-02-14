@@ -85,6 +85,13 @@ class JavaService:
             return str(self.data["log_root"]).replace("${root}", self.get_root())
         else:
             return None
+        
+    def get_log_file(self) -> str | None:
+        log_root = self.get_log_root()
+        if not log_root:
+            return None
+        else:
+            return os.path.join(log_root, "server.log")
 
     def get_terminate_timeout(self) -> int | None:
         if "terminate_timeout" in self.data:

@@ -1,7 +1,9 @@
 import sys
 
 from commands.list import list_command
+from commands.log import log_command
 from commands.start import start_command
+from commands.status import status_command
 from commands.stop import stop_command
 from domain.config import Config
 
@@ -21,5 +23,9 @@ if __name__ == '__main__':
         start_command()
     elif command == "stop":
         stop_command()
+    elif command == "status":
+        status_command()
+    elif command == "log":
+        log_command()
     else:
         print("Unknown command: " + command)
