@@ -1,5 +1,6 @@
 import sys
 import os
+import socket
 from enum import Enum
 
 from commands.helper import find_jar_file, find_lib_folder
@@ -80,18 +81,21 @@ class JavaService:
         else:
             return None
 
-    def get_log_root(self) -> str | None:
+    def get_log_root(self) -> str:
         if "log_root" in self.data:
-            return str(self.data["log_root"]).replace("${root}", self.get_root())
+            hostname = socket.gethostname()
+            log_root = str(self.data["log_root"]).replace("${root}", self.get_root())
+            log_root = os.path.join(log_root, hostname)
         else:
-            return None
+            log_root = os.path.join(self.get_root(), "logs")
+        return log_root
         
+    def get_log_file_name(self) -> str:
+        hostname = socket.gethostname()
+        return "server-" + hostname
+
     def get_log_file(self) -> str | None:
-        log_root = self.get_log_root()
-        if not log_root:
-            return None
-        else:
-            return os.path.join(log_root, "server.log")
+        return os.path.join(self.get_log_root(), self.get_log_file_name() + ".log")
 
     def get_terminate_timeout(self) -> int | None:
         if "terminate_timeout" in self.data:

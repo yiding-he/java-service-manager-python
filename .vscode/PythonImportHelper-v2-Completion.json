@@ -96,6 +96,24 @@
         "documentation": {}
     },
     {
+        "label": "signal",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "signal",
+        "description": "signal",
+        "detail": "signal",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
         "label": "get_service",
         "importPath": "domain.service",
         "description": "domain.service",
@@ -234,12 +252,12 @@
         "documentation": {}
     },
     {
-        "label": "sys",
+        "label": "socket",
         "kind": 6,
         "isExtraImport": true,
-        "importPath": "sys",
-        "description": "sys",
-        "detail": "sys",
+        "importPath": "socket",
+        "description": "socket",
+        "detail": "socket",
         "documentation": {}
     },
     {
@@ -358,7 +376,7 @@
         "kind": 2,
         "importPath": "commands.start",
         "description": "commands.start",
-        "peekOfCode": "def start_lib_dir(service: JavaService):\n    logging.info(f\"启动服务 {service.get_name()}...\")\n    logging.info(f\"服务类型为 {service.get_type()}\")\n    pass\ndef start_fat_jar(service: JavaService):\n    logging.info(f\"启动服务 {service.get_name()}...\")\n    logging.info(f\"服务类型为 {service.get_type()}\")\n    logging.info(f\"打包路径为 {service.jar_path}\")\n    java_executable = service.get_executable()\n    logging.info(f\"java 执行路径为 {java_executable}\")",
+        "peekOfCode": "def start_lib_dir(service: JavaService):\n    logging.info(f\"启动服务 {service.get_name()}...\")\n    logging.info(f\"服务类型为 {service.get_type()}\")\n    pass\ndef start_fat_jar(service: JavaService):\n    logging.info(f\"启动服务 {service.get_name()}...\")\n    logging.info(f\"服务类型为 {service.get_type()}\")\n    logging.info(f\"打包路径为 {service.jar_path}\")\n    logging.info(f\"日志输出路径为 {service.get_log_file()}\")\n    java_executable = service.get_executable()",
         "detail": "commands.start",
         "documentation": {}
     },
@@ -367,7 +385,7 @@
         "kind": 2,
         "importPath": "commands.start",
         "description": "commands.start",
-        "peekOfCode": "def start_fat_jar(service: JavaService):\n    logging.info(f\"启动服务 {service.get_name()}...\")\n    logging.info(f\"服务类型为 {service.get_type()}\")\n    logging.info(f\"打包路径为 {service.jar_path}\")\n    java_executable = service.get_executable()\n    logging.info(f\"java 执行路径为 {java_executable}\")\n    # 我们将服务名参数当作搜索关键字，用于查询服务是否正在运行中\n    service_name_arg = service.get_search_keyword()\n    log_dir_arg = (\"-Dlog.root=\" + service.get_log_root()) if service.get_log_root() is not None else None\n    command = ([java_executable, service_name_arg, log_dir_arg] + service.get_jvm_args() +",
+        "peekOfCode": "def start_fat_jar(service: JavaService):\n    logging.info(f\"启动服务 {service.get_name()}...\")\n    logging.info(f\"服务类型为 {service.get_type()}\")\n    logging.info(f\"打包路径为 {service.jar_path}\")\n    logging.info(f\"日志输出路径为 {service.get_log_file()}\")\n    java_executable = service.get_executable()\n    logging.info(f\"java 执行路径为 {java_executable}\")\n    # 我们将服务名参数当作搜索关键字，用于查询服务是否正在运行中\n    service_name_arg = service.get_search_keyword()\n    log_dir_arg = (\"-Dlog.root=\" + service.get_log_root()) if service.get_log_root() is not None else None",
         "detail": "commands.start",
         "documentation": {}
     },

@@ -1,6 +1,8 @@
 import platform
 import logging
 import subprocess
+import signal
+import sys
 
 from domain.service import get_service
 
@@ -20,6 +22,11 @@ def log_command():
         ["tail", "-fn100", service.get_log_file()], 
         stdout=subprocess.PIPE, stderr=subprocess.STDOUT, universal_newlines=True
     ) as process:
-        for line in process.stdout:
-            print(line, end='')
+        try:
+            for line in process.stdout:
+                print(line, end='')
+        except KeyboardInterrupt:
+            logging.info("结束查看日志")
+            sys.exit(0)
+
         process.wait()

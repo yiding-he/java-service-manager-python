@@ -14,6 +14,7 @@ def start_fat_jar(service: JavaService):
     logging.info(f"启动服务 {service.get_name()}...")
     logging.info(f"服务类型为 {service.get_type()}")
     logging.info(f"打包路径为 {service.jar_path}")
+    logging.info(f"日志输出路径为 {service.get_log_file()}")
 
     java_executable = service.get_executable()
     logging.info(f"java 执行路径为 {java_executable}")
@@ -22,7 +23,9 @@ def start_fat_jar(service: JavaService):
     service_name_arg = service.get_search_keyword()
 
     log_dir_arg = ("-Dlog.root=" + service.get_log_root()) if service.get_log_root() is not None else None
-    command = ([java_executable, service_name_arg, log_dir_arg] + service.get_jvm_args() +
+    log_file_arg = "-Dlog.file=" + service.get_log_file_name()
+    command = ([java_executable, service_name_arg, log_dir_arg, log_file_arg] +
+               service.get_jvm_args() +
                ["-jar", service.jar_path] + service.get_app_args())
 
     search_result = search_service_process(service_name_arg)
