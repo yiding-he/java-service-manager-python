@@ -1,0 +1,15 @@
+jsm:
+  services:
+    - root: /home/java/service1
+    - root: /home/java/service2
+    - root: /home/java/service3
+    - root: /home/java/service4
+    - root: /home/java/service5
+    - root: /home/java/service6
+    - root: /home/java/service7
+    - root: /home/java/service8
+    - root: /home/java/service9
+    - root: /home/java/service10
+    - root: /home/java/service11
+    - root: /home/java/service12
+    - root: /home/java/service13
