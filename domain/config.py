@@ -29,7 +29,7 @@ class Config:
         if cls.CONFIG is None:
             cls.CONFIG_FILE_PATH = Config.find_jsm_yaml_file()
             logging.debug("加载配置文件 %s", cls.CONFIG_FILE_PATH)
-            with open(cls.CONFIG_FILE_PATH, "r") as f:
+            with open(cls.CONFIG_FILE_PATH, "r", encoding="UTF-8") as f:
                 cls.CONFIG = yaml.safe_load(f)
             if cls.CONFIG is None:
                 cls.CONFIG = {"jsm": {"services": []}}
@@ -54,7 +54,7 @@ class Config:
             'disable_existing_loggers': False,  # 是否禁用已存在的日志器，默认False
             'formatters': {  # 格式化器，这里没有定义则使用默认格式
                 'standard': {  # 自定义名称的格式化器，这里未使用
-                    'format': '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+                    'format': '%(asctime)s [%(levelname)s] %(message)s'
                 },
             },
             'handlers': {  # 处理器配置

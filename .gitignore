@@ -52,3 +52,4 @@ packages/
 venv3.6
 venv3.7
 *.spec
+**/logs

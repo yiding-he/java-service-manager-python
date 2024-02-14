@@ -1,13 +1,22 @@
 jsm:
   services:
-    - root: /home/java/service1
+    - root: java-projects/fat-jar
       name: service1
-    - root: /home/java/service2
+      java_home: E:/JDK/jdk-11.0.20
+      jvm_args: -Xmx1g
+      app_args: --server.port=8080
+      log_root: ${root}/logs
+      terminate_timeout: 10   # 服务正常结束所需最多时间，如果超过这个时间进程依然没有结束，则强制结束进程
+    - root: java-projects/lib-dir
       name: service2
+      java_home: /usr/lib/jvm/java-17-openjdk
     - root: /home/java/service3
       name: service3
+      java_home: /usr/lib/jvm/java-11-openjdk
+      log_root: /other/log/path
     - root: /home/java/service4
       name: service4
+      executable: my_java_executable   # executable can be alias command for java
     - root: /home/java/service5
       name: service5
     - root: /home/java/service6

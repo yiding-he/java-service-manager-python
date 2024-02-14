@@ -2,6 +2,7 @@ import sys
 
 from commands.list import list_command
 from commands.start import start_command
+from commands.stop import stop_command
 from domain.config import Config
 
 if __name__ == '__main__':
@@ -18,5 +19,7 @@ if __name__ == '__main__':
         list_command()
     elif command == "start":
         start_command()
+    elif command == "stop":
+        stop_command()
     else:
         print("Unknown command: " + command)
