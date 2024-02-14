@@ -31,6 +31,8 @@ class Config:
             logging.debug("加载配置文件 %s", cls.CONFIG_FILE_PATH)
             with open(cls.CONFIG_FILE_PATH, "r") as f:
                 cls.CONFIG = yaml.safe_load(f)
+            if cls.CONFIG is None:
+                cls.CONFIG = {"jsm": {"services": []}}
             if cls.CONFIG["jsm"] is None:
                 cls.CONFIG["jsm"] = {"services": []}
 

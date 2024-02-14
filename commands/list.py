@@ -5,9 +5,11 @@ from domain.config import Config
 
 def list_command():
     services = Config.CONFIG["jsm"]["services"]
-    index_len = 1 if len(services) < 9 else 2 if len(services) < 99 else 3
-    name_len = max(len(service["name"]) for service in services)
+
     if services:
+        index_len = 1 if len(services) < 9 else 2 if len(services) < 99 else 3
+        name_len = max(len(service["name"]) for service in services)
+
         print(f"找到 {len(services)} 个服务: ")
         for i in range(len(services)):
             service = services[i]
